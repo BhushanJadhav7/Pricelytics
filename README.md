@@ -66,3 +66,6 @@ This project provides an opportunity to work with:
 - Python 3.11 or 3.12 (recommended)
 - A code editor (like VS Code) and terminal access
 
+  ![Sample 1 - Input Form](https://raw.githubusercontent.com/yourusername/repository/branch/assets/input_sample1.png)
+
+
