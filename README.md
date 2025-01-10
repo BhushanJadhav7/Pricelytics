@@ -66,5 +66,5 @@ This project provides an opportunity to work with:
 - Python 3.11 or 3.12 (recommended)
 - A code editor (like VS Code) and terminal access
 
-[**Try Pricelytics Now**](https://bug-free-train-r4rvv6rx746hq69-8501.app.github.dev/)
+[**Try Pricelytics Now**](https://pricelytics.streamlit.app/)
 
