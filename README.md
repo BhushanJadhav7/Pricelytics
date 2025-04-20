@@ -1,4 +1,4 @@
- # **Pricelytics** - Dynamic Pricing Prediction App
+ # **Pricelytics** - Dynamic Price Prediction App
 
 **Pricelytics** is an AI-powered dynamic pricing tool designed to predict optimal selling prices for products based on various factors like product brand, category, subcategory, item rating, and more. The app leverages a machine learning model built using Random Forest Regressor, trained on historical product data, to provide businesses with insights into competitive pricing strategies.
 
