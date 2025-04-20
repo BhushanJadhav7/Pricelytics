@@ -16,8 +16,11 @@ def get_user_inputs():
     subcategory_1 = st.selectbox("Select Subcategory 1", options=options_dict['Subcategory_1'])
     subcategory_2 = st.selectbox("Select Subcategory 2", options=options_dict['Subcategory_2'])
     
+     # Date input
+    date = st.date_input("Select Date")
     
     # Numerical inputs
+    item_rating = st.number_input("Enter Item Rating (0.0 - 5.0)", min_value=0.0, max_value=5.0, step=0.1)
     selling_price = st.number_input("Enter Selling Price (₹)", min_value=0.0, step=1.0)
 
     # Create DataFrame with user input
