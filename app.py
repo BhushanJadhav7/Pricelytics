@@ -16,7 +16,7 @@ def get_user_inputs():
     subcategory_1 = st.selectbox("Select Subcategory 1", options=options_dict['Subcategory_1'])
     subcategory_2 = st.selectbox("Select Subcategory 2", options=options_dict['Subcategory_2'])
     
-     # Date input
+    # Date input
     date = st.date_input("Select Date")
     
     # Numerical inputs
@@ -30,6 +30,8 @@ def get_user_inputs():
         'Item_Category': [item_category],
         'Subcategory_1': [subcategory_1],
         'Subcategory_2': [subcategory_2],
+        'Item_Rating': [item_rating],
+        'Date': [date.strftime('%d-%m-%Y')],
         'Selling_Price': [selling_price]
     })
     
