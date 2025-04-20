@@ -67,8 +67,3 @@ This project provides an opportunity to work with:
 - A code editor (like VS Code) and terminal access
 
 [**Try Pricelytics Now**](https://pricelytics.streamlit.app/)
-### Screenshot 1:
-![Image description]("C:\Users\bhush\OneDrive\Pictures\Screenshots\Screenshot 2025-04-20 234444.png")
-
-### Screenshot 2:
-![Image description]("C:\Users\bhush\OneDrive\Pictures\Screenshots\Screenshot 2025-04-20 234459.png")
