@@ -1,69 +1,128 @@
- # **Pricelytics** - Dynamic Price Prediction App
+# **Pricelytics Enterprise** 🚀
+### Automated Real-Time Dynamic Pricing & Inventory Intelligence Platform
 
-**Pricelytics** is an AI-powered dynamic pricing tool designed to predict optimal selling prices for products based on various factors like product brand, category, subcategory, item rating, and more. The app leverages a machine learning model built using Random Forest Regressor, trained on historical product data, to provide businesses with insights into competitive pricing strategies.
+**Pricelytics Enterprise** is a production-grade, full-stack business application designed for retail, e-commerce, and merchandising teams to optimize selling prices, maximize profit margins, and monitor catalog equilibrium in real-time.
 
-## **Project Overview**
+Powered by **PostgreSQL**, an automated **Real-Time Random Forest Machine Learning Pipeline**, and an executive **Business Dashboard** built with **React and Tailwind CSS**.
 
-This project aims to develop an intelligent dynamic pricing system for businesses in the e-commerce and retail industry. By analyzing key features such as product category, brand, item ratings, and historical pricing data, the system predicts optimal selling prices, which can maximize profitability while staying competitive in the market.
+---
 
-## **Problem Statement**
+## 🌟 Key Architecture & Capabilities
 
-In today's competitive retail and e-commerce landscape, pricing products accurately is a critical factor for maximizing profits. Setting the right price involves considering various factors like product category, brand, customer ratings, and historical data. Manually determining the price can be inefficient, inconsistent, and prone to errors. The problem lies in automating this pricing decision based on multiple features to improve accuracy and profitability.
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│               EXECUTIVE FRONTEND DASHBOARD (React + Tailwind)          │
+│  - Executive Pulse (KPIs)       - Product Inventory CRUD Grid          │
+│  - Real-Time Price Simulator    - CSV Batch Pipeline Studio            │
+│  - ML Model & DB Diagnostics    - Live WebSocket Event Stream          │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ REST API + WebSockets
+┌───────────────────────────────────▼────────────────────────────────────┐
+│                    FASTAPI ASYNC BACKEND ENGINE                        │
+│  - CRUD Controllers             - Batch File Ingestion Service         │
+│  - Analytics Aggregator         - WebSocket Real-Time Broadcast Manager│
+└───────────────┬───────────────────────────────────┬────────────────────┘
+                │                                   │
+┌───────────────▼───────────────────┐ ┌─────────────▼────────────────────┐
+│      POSTGRESQL DATABASE          │ │  RANDOM FOREST ML PIPELINE       │
+│  - ACID Product Inventory Schema  │ │  - Real-Time Dynamic Pricing     │
+│  - Batch Upload & Audit Logs      │ │  - Elasticity & Uplift Engine    │
+│  - Model Metadata & Metrics Logs  │ │  - On-Demand Live Retraining     │
+└───────────────────────────────────┘ └──────────────────────────────────┘
+```
 
-## **Why the Project Was Chosen**
+---
 
-The choice of this project stems from the importance of pricing in business strategy. Dynamic pricing has the potential to revolutionize industries like e-commerce, retail, and hospitality. By using AI to automate and optimize pricing decisions, businesses can achieve:
-- Improved pricing strategies that reflect market demands.
-- Better revenue optimization.
-- Reduced dependency on manual price adjustments.
-  
-This project provides an opportunity to work with:
-- Machine learning models like **Random Forest Regressor** for regression tasks.
-- **Streamlit** for interactive web applications.
-- Real-world business problems related to pricing and profitability.
+## ⚡ Core Features
 
-## **Technologies Used**
+### 1. 🗄️ PostgreSQL Database Pipeline & Full CRUD
+- **Real-Time Data Ingestion**: Relational schema storing product code, brand, category, subcategories, customer ratings, dates, and historical prices.
+- **Automated Pricing Calculation**: When products are created or updated, they automatically pass through the Random Forest pipeline to compute the optimal dynamic price and margin uplift.
+- **Search, Filter & Sort**: Fast indexing on categories, brands, price bands, ratings, and pricing health status.
 
-- **Python 3.11/3.12**: Programming language.
-- **Streamlit**: For building the interactive web application interface.
-- **Pandas**: Data manipulation and analysis.
-- **Scikit-learn**: For training and evaluating machine learning models.
-- **Joblib**: For saving and loading trained models.
-- **Matplotlib** and **Seaborn** (optional): For visualizations and analysis.
-- **Jupyter Notebook**: For model training, experimentation, and evaluation.
-  
-## **How the Project Works**
+### 2. 🤖 Real-Time Random Forest ML Pipeline
+- **Continuous Valuation**: Predicts optimal selling prices using multi-variable regression (Brand power, Category baseline, Quality sentiment, Date trends).
+- **Price Elasticity & What-If Simulation**: Interactive playground for pricing managers to model expected dynamic prices across rating and category scenarios.
+- **One-Click Live Retraining**: Retrain the Random Forest model on the live PostgreSQL dataset with real-time performance evaluation (R² score, MAE, RMSE).
 
-1. **Data Collection**:
-   The project uses a dataset that contains historical product details like:
-   - Product ID
-   - Brand
-   - Item Category
-   - Subcategories
-   - Item Rating
-   - Selling Price
-   - Date of listing
-  
-2. **Model Training**:
-   - The dataset is preprocessed to handle missing values and categorical features.
-   - Numerical features are scaled, and categorical features are encoded.
-   - A **Random Forest Regressor** model is trained to predict the selling price based on the above features.
+### 3. 📊 Executive Business Dashboard (Tailwind CSS)
+- **Executive Pulse**: High-impact KPI cards for total catalog revenue, margin uplift potential, underpriced SKU opportunities, and model accuracy.
+- **Interactive Visualizations**: Actual vs. Predicted scatter plot matrix, category volume/pricing bar charts, pricing equilibrium donut charts.
+- **Batch CSV Studio**: Drag & drop bulk CSV file upload with streaming progress and real-time inference telemetry.
+- **Live Stream**: Instant WebSocket updates when new items are added, updated, or retrained.
 
-3. **User Interface**:
-   - The user interacts with a **Streamlit app**, where they input product details like the brand, category, item rating, and date.
-   - The app provides a dynamic pricing prediction based on the trained model.
+---
 
-4. **Prediction**:
-   - The model uses the input data to predict the optimal selling price for the product.
-   - The prediction is displayed on the app, helping businesses decide the best price for their products.
+## 🛠️ Tech Stack
 
-5. **Output**:
-   The user receives a predicted price that is optimal based on the input features and historical data. This price can be used to optimize the business's pricing strategy.
+- **Backend**: Python 3.11, FastAPI, SQLAlchemy, Uvicorn, WebSockets, Pydantic V2
+- **Database**: PostgreSQL 16 (with SQLite zero-config fallback)
+- **Machine Learning**: Scikit-Learn (Random Forest Regressor), Joblib, Pandas, NumPy
+- **Frontend**: React 18, Vite, Tailwind CSS, Lucide React, Recharts, Axios
+- **DevOps**: Docker, Docker Compose, Nginx
 
-## **Setup and Installation**
+---
 
-### Prerequisites
-- Python 3.11 or 3.12 (recommended)
-- A code editor (like VS Code) and terminal access
+## 🚀 Quickstart Guide
 
-[**Try Pricelytics Now**](https://pricelytics.streamlit.app/)
+### Option 1: Run with Docker Compose (Recommended)
+
+To launch PostgreSQL, FastAPI Backend, and Vite React Frontend with 1 command:
+
+```bash
+docker-compose up --build
+```
+
+- **Frontend Dashboard**: [http://localhost:5173](http://localhost:5173)
+- **FastAPI Interactive Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **PostgreSQL Database**: `localhost:5432` (`pricelytics_db`)
+
+---
+
+### Option 2: Local Development
+
+#### 1. Backend Setup:
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# (Optional) Configure .env with your PostgreSQL credentials
+# If skipped, SQLite will automatically be used for local testing.
+
+# Run database schema initialization & seed
+python -m backend.seed_data
+
+# Start FastAPI backend server
+uvicorn backend.main:app --reload --port 8000
+```
+
+#### 2. Frontend Setup:
+```bash
+cd frontend
+
+# Install frontend dependencies
+npm install
+
+# Start Vite dev server
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser!
+
+---
+
+## 📑 API Reference
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/products` | Paginated, filtered product inventory list |
+| `POST` | `/api/products` | Create product + run real-time ML dynamic price calculation |
+| `PUT` | `/api/products/{id}` | Update product attributes + recalculate optimal price |
+| `DELETE` | `/api/products/{id}` | Remove product from PostgreSQL database |
+| `GET` | `/api/analytics/overview` | Executive KPI Pulse (Catalog value, margin uplift, SKU counts) |
+| `GET` | `/api/analytics/categories` | Category pricing and volume breakdown |
+| `GET` | `/api/analytics/scatter` | Actual vs. Predicted price scatter matrix |
+| `POST` | `/api/pipeline/predict-realtime` | On-the-fly Random Forest inference & what-if simulator |
+| `POST` | `/api/pipeline/upload-csv` | Bulk CSV batch ingestion with streaming inference |
+| `POST` | `/api/pipeline/retrain` | Retrain Random Forest model on live PostgreSQL database |
+| `WS` | `/ws/live-feed` | Real-time WebSocket event stream |

@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Service
+  postgres:
+    image: postgres:16-alpine
+    container_name: pricelytics-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: pricelytics_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d pricelytics_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend & ML Pipeline Service
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: pricelytics-backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://postgres:postgrespassword@postgres:5432/pricelytics_db
+      MODEL_PATH: dynamic_pricing_pipeline.pkl
+      DATASET_PATH: Train.csv
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app/backend
+      - ./dynamic_pricing_pipeline.pkl:/app/dynamic_pricing_pipeline.pkl
+
+  # React + Tailwind Frontend Dashboard Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pricelytics-frontend
+    restart: always
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
